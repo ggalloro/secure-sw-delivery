@@ -18,7 +18,7 @@ steps:
     dir: ${_APP_NAME}
   # Build and tag using commit sha
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '.', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/${_REPO_NAME}/${_APP_NAME}:${COMMIT_SHA}', '-f', 'Dockerfile']
+    args: ['build', '.', '-t', 'europe-west1-docker.pkg.dev/$PROJECT_ID/${_REPO_NAME}/${_APP_NAME}:${COMMIT_SHA}', '-f', 'Dockerfile']
     dir: ${_APP_NAME}
   # Push the container image to Artifact Registry, get sha256 of the image
   - name: gcr.io/cloud-builders/docker
@@ -26,8 +26,8 @@ steps:
     args:
     - -c
     - |
-      docker push us-central1-docker.pkg.dev/$PROJECT_ID/${_REPO_NAME}/${_APP_NAME}:${COMMIT_SHA} &&
-      docker image inspect us-central1-docker.pkg.dev/$PROJECT_ID/${_REPO_NAME}/${_APP_NAME}:${COMMIT_SHA} --format '{{index .RepoDigests 0}}' > image-digest.txt &&
+      docker push europe-west1-docker.pkg.dev/$PROJECT_ID/${_REPO_NAME}/${_APP_NAME}:${COMMIT_SHA} &&
+      docker image inspect europe-west1-docker.pkg.dev/$PROJECT_ID/${_REPO_NAME}/${_APP_NAME}:${COMMIT_SHA} --format '{{index .RepoDigests 0}}' > image-digest.txt &&
       cat image-digest.txt
     id: push
     # Test against my vulnerability policy
@@ -54,13 +54,13 @@ steps:
     - |
       gcloud deploy releases create rel-${SHORT_SHA} \
       --delivery-pipeline=${_PIPELINE_NAME} \
-      --region=us-central1 \
+      --region=europe-west1 \
       --annotations=commitId=${REVISION_ID} \
       --images=${_APP_NAME}=$(/bin/cat image-digest.txt)
     waitFor: ['vulnsign']
 images:
-- us-central1-docker.pkg.dev/$PROJECT_ID/${_REPO_NAME}/${_APP_NAME}:${COMMIT_SHA}
+- europe-west1-docker.pkg.dev/$PROJECT_ID/${_REPO_NAME}/${_APP_NAME}:${COMMIT_SHA}
 options:
   requestedVerifyOption: VERIFIED
-  pool:
-    name: 'projects/$PROJECT_ID/locations/us-central1/workerPools/private-pool'
+#  pool:
+#    name: 'projects/$PROJECT_ID/locations/europe-west1/workerPools/private-eu'

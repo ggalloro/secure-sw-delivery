@@ -241,18 +241,18 @@
   <distributionManagement>
     <snapshotRepository>
       <id>artifact-registry</id>
-      <url>artifactregistry://us-central1-maven.pkg.dev/vsz-demo/remote-maven</url>
+      <url>artifactregistry://europe-west1-maven.pkg.dev/galloro-demos/remote-maven</url>
     </snapshotRepository>
     <repository>
       <id>artifact-registry</id>
-      <url>artifactregistry://us-central1-maven.pkg.dev/vsz-demo/remote-maven</url>
+      <url>artifactregistry://europe-west1-maven.pkg.dev/galloro-demos/remote-maven</url>
     </repository>
   </distributionManagement>
   <repositories>
     <repository>
       <id>central</id>
       <name>Maven Central remote repository</name>
-      <url>artifactregistry://us-central1-maven.pkg.dev/vsz-demo/remote-maven</url>
+      <url>artifactregistry://europe-west1-maven.pkg.dev/galloro-demos/remote-maven</url>
       <layout>default</layout>
       <releases>
         <enabled>true</enabled>

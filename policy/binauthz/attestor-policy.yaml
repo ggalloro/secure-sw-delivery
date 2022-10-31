@@ -2,6 +2,6 @@ defaultAdmissionRule:
   enforcementMode: ENFORCED_BLOCK_AND_AUDIT_LOG
   evaluationMode: REQUIRE_ATTESTATION
   requireAttestationsBy:
-  - projects/vsz-demo/attestors/built-by-cloud-build
-  - projects/vsz-demo/attestors/vulnz-attestor
-name: projects/vsz-demo/policy
+  - projects/galloro-demos/attestors/built-by-cloud-build
+  - projects/galloro-demos/attestors/vulnz-attestor
+name: projects/galloro-demos/policy

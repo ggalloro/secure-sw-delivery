@@ -1,4 +1,4 @@
-# replace "project-id-here" in the three targets below with your actual project(s)
+# replace "galloro-demos" in the three targets below with your actual project(s)
 apiVersion: deploy.cloud.google.com/v1
 kind: DeliveryPipeline
 metadata:
@@ -16,7 +16,7 @@ metadata:
   name: test-sec
 description: test cluster
 gke:
-  cluster: projects/project-id-here/locations/europe-west1-b/clusters/test-sec
+  cluster: projects/galloro-demos/locations/europe-west1-b/clusters/test-sec
 ---
 
 apiVersion: deploy.cloud.google.com/v1
@@ -26,4 +26,4 @@ metadata:
 description: prod cluster
 requireApproval: true
 gke:
-  cluster: projects/project-id-here/locations/europe-west1-b/clusters/prod-sec
+  cluster: projects/galloro-demos/locations/europe-west1-b/clusters/prod-sec

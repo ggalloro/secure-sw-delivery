@@ -1,5 +1,5 @@
 admissionWhitelistPatterns:
-- namePattern: us-central1-docker.pkg.dev/project-id-here/**
+- namePattern: europe-west1-docker.pkg.dev/project-id-here/**
 defaultAdmissionRule:
   enforcementMode: ENFORCED_BLOCK_AND_AUDIT_LOG
   evaluationMode: ALWAYS_DENY

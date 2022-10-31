@@ -44,10 +44,10 @@ Verify that the Google Cloud Deploy pipeline was created in the
 ## Authorize your docker to push/pull to Artifact registry
 Before you can push or pull images, configure Docker to use the Google Cloud CLI to authenticate requests to Artifact Registry.
 
-To set up authentication to Docker repositories in the region us-central1, run the following command:
+To set up authentication to Docker repositories in the region europe-west1, run the following command:
 
 ```bash
-gcloud auth configure-docker us-central1-docker.pkg.dev
+gcloud auth configure-docker europe-west1-docker.pkg.dev
 ```
 
 ## Turn on automated container vulnerability analysis
@@ -148,15 +148,15 @@ For more docs, see: https://cloud.google.com/binary-authorization/docs/setting-u
 ## Add substitutions to the Cloud Build Trigger
 During a previous step you created a Github trigger for the build. While the following substitutions can be added directly to the cloudbuild file, it’s a bit safer to add these to the trigger itself.
 
-1. Open the [Cloud Build trigger UI](https://console.cloud.google.com/cloud-build/triggers;region=us-central1)
+1. Open the [Cloud Build trigger UI](https://console.cloud.google.com/cloud-build/triggers;region=europe-west1)
 * Find and edit your trigger in the UI. If you don’t see it, make sure you select the region you set up the trigger in.
 
 2. Click the 3 dots menu → Edit
 
 3. Scroll to the Advanced section and add these three variables:
 * Variable 1: _KMS_DIGEST_ALG (value will be "SHA512" or "SHA256", depending on your key)
-* Variable 2: _KMS_KEY_NAME (value will look like: projects/vsz-demo/locations/global/keyRings/RING-NAME/cryptoKeys/YOUR-KEY/cryptoKeyVersions/1)
-* Variable 3: _NOTE_NAME (value will look like: projects/vsz-demo/notes/NOTE-NAME)
+* Variable 2: _KMS_KEY_NAME (value will look like: projects/galloro-demos/locations/global/keyRings/RING-NAME/cryptoKeys/YOUR-KEY/cryptoKeyVersions/1)
+* Variable 3: _NOTE_NAME (value will look like: projects/galloro-demos/notes/NOTE-NAME)
 
 You can find the last two values in the vulnz-attestor in the [Binary Authorization attestor list UI](https://console.cloud.google.com/security/binary-authorization/attestors?). 
 
@@ -167,7 +167,7 @@ You can find the last two values in the vulnz-attestor in the [Binary Authorizat
 2. Click Create
 3. Use these parameters:
 * Name: private-pool
-* Region: us-central1
+* Region: europe-west1
 * Machine type: e2-medium
 * Available disk size: 100 GB
 * Project: (leave blank)

@@ -17,16 +17,16 @@ steps:
     dir: ${_APP_NAME}
   # Build and tag using commit sha
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '.', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/${_REPO_NAME}/${_APP_NAME}:latest', '-f', 'Dockerfile']
+    args: ['build', '.', '-t', 'europe-west1-docker.pkg.dev/$PROJECT_ID/${_REPO_NAME}/${_APP_NAME}:latest', '-f', 'Dockerfile']
     dir: ${_APP_NAME}
   # Push the container image to Artifact Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/${_REPO_NAME}/${_APP_NAME}:latest']
+    args: ['push', 'europe-west1-docker.pkg.dev/$PROJECT_ID/${_REPO_NAME}/${_APP_NAME}:latest']
   # Deploy container image to Cloud Run
   - name: gcr.io/google.com/cloudsdktool/cloud-sdk
     entrypoint: gcloud
-    args: ['run', 'deploy', '${_APP_NAME}', '--image', 'us-central1-docker.pkg.dev/$PROJECT_ID/${_REPO_NAME}/${_APP_NAME}:latest', '--binary-authorization', 'default', '--region', 'us-central1', '--platform', 'managed', '--memory', '1Gi']
+    args: ['run', 'deploy', '${_APP_NAME}', '--image', 'europe-west1-docker.pkg.dev/$PROJECT_ID/${_REPO_NAME}/${_APP_NAME}:latest', '--binary-authorization', 'default', '--region', 'europe-west1', '--platform', 'managed', '--memory', '1Gi']
 images:
-- us-central1-docker.pkg.dev/$PROJECT_ID/${_REPO_NAME}/${_APP_NAME}:latest
+- europe-west1-docker.pkg.dev/$PROJECT_ID/${_REPO_NAME}/${_APP_NAME}:latest
 options:
   requestedVerifyOption: VERIFIED
