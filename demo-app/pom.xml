@@ -182,7 +182,7 @@
       <extension>
         <groupId>com.google.cloud.artifactregistry</groupId>
         <artifactId>artifactregistry-maven-wagon</artifactId>
-        <version>2.1.5</version>
+        <version>2.2.0</version>
       </extension>
     </extensions>
   </build>
@@ -251,6 +251,7 @@
   <repositories>
     <repository>
       <id>central</id>
+      <name>Maven Central remote repository</name>
       <url>artifactregistry://europe-west1-maven.pkg.dev/galloro-demos/remote-maven</url>
       <layout>default</layout>
       <releases>
@@ -261,4 +262,5 @@
       </snapshots>
     </repository>
   </repositories>
+
 </project>
