@@ -7,10 +7,10 @@ substitutions:
   _PIPELINE_NAME: security-demo-pipeline
 steps:
   # integration tests app with Maven
-  - name: maven:3-eclipse-temurin-17
-    entrypoint: mvn
-    args: ["verify"]
-    dir: ${_APP_NAME}
+# - name: maven:3-eclipse-temurin-17
+#   entrypoint: mvn
+#   args: ["verify"]
+#   dir: ${_APP_NAME}
   # build app with Maven
   - name: maven:3-eclipse-temurin-17
     entrypoint: mvn
