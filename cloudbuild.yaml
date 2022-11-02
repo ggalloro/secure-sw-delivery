@@ -62,5 +62,5 @@ images:
 - europe-west1-docker.pkg.dev/$PROJECT_ID/${_REPO_NAME}/${_APP_NAME}:${COMMIT_SHA}
 options:
   requestedVerifyOption: VERIFIED
-#  pool:
-#    name: 'projects/$PROJECT_ID/locations/europe-west1/workerPools/private-eu'
+  pool:
+    name: 'projects/$PROJECT_ID/locations/europe-west1/workerPools/private-eu'
