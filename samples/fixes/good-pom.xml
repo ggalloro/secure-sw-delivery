@@ -6,7 +6,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.7.2</version>
+    <version>3.0.6</version>
   </parent>
   <groupId>com.example</groupId>
   <artifactId>demo-app</artifactId>
@@ -31,7 +31,7 @@
     <dependency>
       <groupId>org.springframework.security</groupId>
       <artifactId>spring-security-core</artifactId>
-      <version>5.7.5</version>
+      <version>6.0.3</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
@@ -41,12 +41,12 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
-      <version>5.3.22</version>
+      <version>6.0.0</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-core</artifactId>
-      <version>5.3.22</version>
+      <version>5.3.27</version>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
@@ -100,7 +100,7 @@
       <groupId>com.google.cloud</groupId>
       <artifactId>spring-cloud-gcp-starter</artifactId>
     </dependency>    
-    <!--  Database sependencies-->
+    <!--  Database sependencies -->
     <dependency>
       <groupId>com.h2database</groupId>
       <artifactId>h2</artifactId>
@@ -114,17 +114,6 @@
     </dependency>
 
     <!-- Test dependencies -->
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-test</artifactId>
-      <scope>test</scope>
-      <exclusions>
-        <exclusion>
-          <groupId>org.junit.vintage</groupId>
-          <artifactId>junit-vintage-engine</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
     <dependency>
       <groupId>org.testcontainers</groupId>
       <artifactId>junit-jupiter</artifactId>
